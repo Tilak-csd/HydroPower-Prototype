@@ -61,7 +61,7 @@ const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap');
 
   .hp { font-family: 'DM Sans', sans-serif; background: #fff; color: #1a2a4a; padding: 72px 40px; max-width: 1200px; margin: 0 auto; }
-  .hp-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 38px); font-weight: 700; color: #0a1628; max-width: 400px; margin-bottom: 52px; }
+  .hp-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 38px); font-weight: 700; color: #2563eb; max-width: 500px; margin-bottom: 52px; }
   .hp-canvas { position: relative; width: 100%; }
   .hp-svg-bg { width: 100%; display: block; overflow: visible; }
   

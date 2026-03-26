@@ -21,13 +21,13 @@ const ProjectSection = () => {
     .project-card-shadow {
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    .card-hover-effect {
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-    .card-hover-effect:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
-    }
+    // .card-hover-effect {
+    //   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    // }
+    // .card-hover-effect:hover {
+    //   transform: translateY(-8px);
+    //   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    // }
     .aspect-hydropower {
       aspect-ratio: 16 / 10;
     }

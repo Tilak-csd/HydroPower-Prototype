@@ -41,7 +41,7 @@ const Footer = () => {
           {/* Column 1: Brand & Bio */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src="./hydropower-logo.png" alt="Hydropower Energy" className="h-20 w-auto" />
+              <img src="./hydropower-favicon.png" alt="Hydropower Energy" className="h-20 w-auto" />
             </div>
             <p className="text-slate-400 leading-relaxed text-sm">
               Rawa Energy Development Ltd. is committed to sustainable energy development, 

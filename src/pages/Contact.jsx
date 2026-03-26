@@ -134,7 +134,7 @@ const ContactPage = () => {
 
                     {/* Right Side: Contact Details & Map */}
                     <div className="w-full lg:w-2/5 space-y-8">
-                        <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 space-y-8 shadow-sm">
+                        <div className="bg-slate-50 p-4 lg:p-8 rounded-2xl border border-slate-100 space-y-8 shadow-sm">
                             <div className="flex gap-4">
                                 <div className="w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center text-blue-600 shrink-0">
                                     <FaMapMarkerAlt size={22} />

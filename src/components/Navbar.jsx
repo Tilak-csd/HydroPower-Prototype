@@ -8,13 +8,13 @@ const navLinks = [
     name: 'About Us', 
     path: '/about-us', 
     dropdown: [
-      { name: 'History', path: '/about-us/history' },
+      { name: 'Introduction', path: '/about-us' },
       { name: 'Mission & Vision', path: '/about-us/mission-vision' },
       { name: 'Team', path: '/about-us/team' },
     ]
   },
   { name: 'Projects & Activities', path: '/projects-activities' },
-  { name: 'Releases', path: '/releases', dropdown: [{ name: 'Press Releases', path: '/releases/press-releases' }, {name:"Gallery", path:'/galleries'}] },
+  { name: 'Releases', path: '/releases', dropdown: [{ name: 'Press Releases', path: '/releases/press-releases' }, {name:"Gallery", path:'/gallery'}] },
   { name: 'Downloads', path: '/downloads', dropdown: [{ name: 'Reports', path: '/downloads/reports' }] },
   { name: 'Reports', path: '/reports' },
   { name: 'Contact Us', path: '/contact-us' },

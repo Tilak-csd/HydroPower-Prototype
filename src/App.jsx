@@ -8,10 +8,12 @@ import SubGallery from './pages/SubGallery'
 import About from './pages/About'
 import OurTeam from './pages/OurTeam'
 import VisionMission from './pages/VisionMission'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Navbar />
 
       <Routes>

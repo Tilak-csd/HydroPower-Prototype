@@ -5,6 +5,8 @@ import {
   FaCheckCircle 
 } from 'react-icons/fa'
 
+import GlobalHeroSection from '../components/GlobalHeroSection'
+
 const ContactPage = () => {
     const customStyles = `
     .hero-overlay {
@@ -38,18 +40,8 @@ const ContactPage = () => {
             <style>{customStyles}</style>
 
             {/* --- HERO BANNER --- */}
-            <section className="hero-overlay h-[300px] flex items-center justify-center text-center px-6">
-                <div className="max-w-4xl">
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">
-                        Get in Touch
-                    </h1>
-                    <div className="flex items-center justify-center gap-3 text-blue-400 font-medium">
-                        <a href="/" className="hover:text-white transition-colors">Home</a>
-                        <span className="text-slate-500">/</span>
-                        <span className="text-slate-200">Contact Us</span>
-                    </div>
-                </div>
-            </section>
+            <GlobalHeroSection title={"Get In Touch"} page={"Contact Us"} />
+            
 
             {/* --- CONTACT BODY SECTION --- */}
             <section className="py-16 lg:py-24 container mx-auto px-6 lg:px-12">

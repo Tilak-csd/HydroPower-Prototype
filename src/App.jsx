@@ -9,6 +9,9 @@ import About from './pages/About'
 import OurTeam from './pages/OurTeam'
 import VisionMission from './pages/VisionMission'
 import ScrollToTop from './components/ScrollToTop'
+import Projects from './pages/Project';
+import NotFound from './pages/NotFound';
+import ReportsPage from './pages/Reports';
 
 export default function App() {
   return (
@@ -23,10 +26,18 @@ export default function App() {
         <Route path="/about-us/mission-vision" element={<VisionMission />} />
         <Route path="/about-us/team" element={<OurTeam />} />
 
+        <Route path="/projects-activities" element={<Projects />} />   
+
+        <Route path="/downloads/" element={<ReportsPage />} />        
+        <Route path="/downloads/reports" element={<ReportsPage />} />        
+
+
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
 
         <Route path="/gallery/:albumSlug" element={<SubGallery />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

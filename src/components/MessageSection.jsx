@@ -2,141 +2,73 @@ import React from 'react';
 import { Quote } from 'lucide-react';
 
 const MessageSection = () => {
-  const inlineStyles = `
-    .message-section {
-      padding: 50px 0;
-      background-color: #ffffff;
-      overflow: hidden;
-    }
-    .message-container {
-      display: flex;
-      align-items: center;
-      gap: 80px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .message-content {
-      flex: 1.2;
-    }
-    .message-image-wrapper {
-      flex: 0.8;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-    /* Adjusted Blob to frame the head/shoulders properly */
-    .blob-shape {
-      width: 100%;
-      max-width: 420px;
-      aspect-ratio: 0.85 / 1; /* Slightly taller for portrait view */
-      background-color: #f1f5f9;
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-      overflow: hidden;
-      box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
-      border: 8px solid #fff;
-    }
-    .chairman-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center; /* Ensures head is always visible */
-      transition: transform 0.5s ease;
-    }
-    .blob-shape:hover .chairman-img {
-      transform: scale(1.05);
-    }
-    .read-more-btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background-color: #3b82f6;
-      color: white;
-      text-decoration: none;
-      border-radius: 2px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      margin-top: 30px;
-      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
-    }
-    .read-more-btn:hover {
-      background-color: #2563eb;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 991px) {
-      .message-container {
-        flex-direction: column-reverse; /* Image moves to top on mobile */
-        text-align: center;
-        gap: 50px;
-      }
-      .message-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .blob-shape {
-        max-width: 320px;
-      }
-    }
-  `;
-
   return (
-    <section className="message-section">
-      <style>{inlineStyles}</style>
-      <div className="message-container">
-        
-        {/* Left: Message Content */}
-        <div className="message-content">
-          <div style={{ color: '#bfdbfe', marginBottom: '20px' }}>
-            <Quote size={54} fill="currentColor" />
+    <section className=" lg:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* flex-col-reverse ensures image is on top for mobile, lg:flex-row for side-by-side */}
+        <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-10 lg:gap-20">
+          
+          {/* Left: Message Content */}
+          <div className="w-full lg:flex-[1.2] flex flex-col items-start text-left">
+            {/* Quote Icon - Adjusted size for mobile */}
+            <div className="text-blue-100 mb-4 lg:mb-8">
+              <Quote className="w-10 h-10 lg:w-14 lg:h-14" fill="currentColor" />
+            </div>
+            
+            {/* Main Title - Responsive scaling */}
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-blue-900 mb-3 tracking-tight leading-tight">
+              Message from Chairman
+            </h2>
+            
+            {/* Sub-heading - Smaller and tighter on mobile */}
+            <h4 className="text-xs md:text-base font-bold text-slate-500 mb-5 tracking-[0.15em] lg:tracking-[0.2em] uppercase">
+              Chairman's Message
+            </h4>
+            
+            {/* Paragraph - Optimized line height and size for readability */}
+            <p className="text-slate-600 leading-relaxed text-sm md:text-lg max-w-2xl">
+              It is an absolute honor to lead Rawa Energy Development Ltd. as we forge ahead in 
+              the renewable energy landscape. Our mission is built on the foundation of 
+              sustainable innovation and community empowerment. We don't just build power plants; 
+              we build the future of energy in Nepal.
+            </p>
+
+            {/* Button - Full width on very small screens, auto on larger */}
+            <a 
+              href="/about/chairman" 
+              className="mt-8 inline-block w-full sm:w-auto text-center px-8 lg:px-10 py-3 lg:py-4 bg-blue-600 text-white font-bold text-xs lg:text-sm rounded-sm shadow-lg shadow-blue-100 hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-300 tracking-wider"
+            >
+              READ MORE
+            </a>
           </div>
-          
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 36px)', color: '#1e40af', fontWeight: '800', marginBottom: '10px' }}>
-            Message from Chairman
-          </h2>
-          
-          <h4 style={{ fontSize: '18px', color: '#475569', fontWeight: '600', marginBottom: '25px', letterSpacing: '0.5px' }}>
-            CHAIRMAN'S MESSAGE
-          </h4>
-          
-          <p style={{ color: '#64748b', lineHeight: '1.8', fontSize: '16px', maxWidth: '600px' }}>
-            It is an absolute honor to lead Rawa Energy Development Ltd. as we forge ahead in 
-            the renewable energy landscape. Our mission is built on the foundation of 
-            sustainable innovation and community empowerment. We don't just build power plants; 
-            we build the future of energy in Nepal.
-          </p>
 
-          <a href="/about/chairman" className="read-more-btn">
-            READ MORE
-          </a>
-        </div>
-
-        {/* Right: Founder Image with Blob */}
-        <div className="message-image-wrapper">
-          <div className="blob-shape">
-            <img 
-              src="./image.png" // The founder image you provided
-              alt="Chairman of Rawa Energy" 
-              className="chairman-img"
-            />
+          {/* Right: Founder Image with Blob */}
+          <div className="w-full lg:flex-[0.8] flex justify-start lg:justify-center relative group">
+            <div className="relative z-10 w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[400px] aspect-[0.85/1] bg-slate-50 border-[4px] lg:border-[6px] border-white shadow-xl overflow-hidden animate-blob-slow"
+                 style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}>
+              <img 
+                src="./image.png" 
+                alt="Chairman of Rawa Energy" 
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            
+            {/* Subtle decorative glow */}
+            <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl -z-10" />
           </div>
-          
-          {/* Decorative element (Optional Blue Circle behind) */}
-          <div style={{ 
-            position: 'absolute', 
-            bottom: '-10px', 
-            right: '10%', 
-            width: '80px', 
-            height: '80px', 
-            backgroundColor: '#3b82f6', 
-            borderRadius: '50%', 
-            zIndex: -1,
-            opacity: 0.1
-          }} />
-        </div>
 
+        </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes blob-move {
+          0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+          50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+        }
+        .animate-blob-slow {
+          animation: blob-move 10s ease-in-out infinite;
+        }
+      `}} />
     </section>
   );
 };

@@ -4,6 +4,7 @@ import AboutSection from '../components/AboutSection'
 import MessageSection from '../components/MessageSection'
 import TimelineSection from '../components/TimelineSection'
 import ProjectSection from '../components/ProjectSection'
+import NewsAndReports from '../components/NewsSection'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <MessageSection />
         <TimelineSection />
         <ProjectSection />
+        <NewsAndReports />
         </main>
   )
 }

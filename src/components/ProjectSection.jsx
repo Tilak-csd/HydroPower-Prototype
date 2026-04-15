@@ -49,7 +49,7 @@ const ProjectSection = () => {
                   />
                 </div>
                 {/* Title - Slate color for contrast against white card */}
-                <h3 className="text-slate-800 font-bold text-base lg:text-xl leading-snug group-hover:text-[#4372c4] transition-colors duration-300">
+                <h3 className="text-slate-800 font-bold text-base lg:text-md leading-snug group-hover:text-[#4372c4] transition-colors duration-300">
                   {project.title}
                 </h3>
               </div>

@@ -14,7 +14,7 @@ const DOT_T = [0.0, 0.115, 0.25, 0.42, 0.545, 0.655, 0.80, 1.0];
 const milestones = [
   { year: "1881 A.D.", icon: "🏛️", text: "The power sector was in the public domain exclusively — under the ownership of NEA.", side: "bottom", align: "left" },
   { year: "1936 A.D.", icon: "🏔️", text: "Sundarijal Hydropower plant with a capacity of 600 kW was once again stalled for decades.", side: "top", align: "right" },
-  { year: "1845 A.D.", icon: "⚡", text: "Under public-private partnership, third Letang hydropower plant was installed.", side: "top", align: "center" },
+  { year: "1845 A.D.", icon: "⚡", text: "Under public-private partnership, third Letang hydropower plant was installed.", side: "top", align: "left" },
   { year: "1988 A.D.", icon: "📋", text: "APPA was signed, the first such instrument signed in Nepal.", side: "top", align: "right" },
   { year: "1996 A.D.", icon: "💼", text: "Succeeded to attract private investment upon successful financial closure of Khimti project.", side: "bottom", align: "center" },
   { year: "2005 A.D.", icon: "🏗️", text: "Commissioning of 144 MW Kali Gandaki-A HEP.", side: "top", align: "left" },
@@ -61,7 +61,7 @@ const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap');
 
   .hp { font-family: 'DM Sans', sans-serif; background: #fff; color: #1a2a4a; padding: 72px 20px; max-width: 1200px; margin: 0 auto; }
-  .hp-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 38px); font-weight: 700; color: #2563eb; max-width: 500px; margin-bottom: 52px; }
+  .hp-title { font-size: clamp(22px, 3vw, 38px); font-weight: 800; max-width: 600px; margin-bottom: 52px; }
   .hp-canvas { position: relative; width: 100%; }
   .hp-svg-bg { width: 100%; display: block; overflow: visible; }
   
@@ -77,7 +77,7 @@ const CSS = `
   .hp-card.align-left .hp-card-inner { align-items: flex-start; text-align: left; }
 
   .hp-card-icon { font-size: 20px; margin-bottom: 5px; }
-  .hp-card-year { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #0a1628; margin-bottom: 4px; }
+  .hp-card-year { font-size: 24px; font-weight: 700; color: #0a1628; margin-bottom: 4px; }
   .hp-card-text { line-height: 1.6; color: #5a6a8a; font-weight: 300; }
 
   .hp-btn { padding: 11px 38px; border: 1.5px solid #2563eb; color: #2563eb; font-size: 13px; font-weight: 600; background: transparent; cursor: pointer; transition: 0.2s; margin-top: 48px; }
@@ -147,8 +147,8 @@ function DesktopCanvas() {
           >
             <div className="hp-card-inner">
               <span className="hp-card-icon" role="img" aria-label="icon">{m.icon}</span>
-              <time className="hp-card-year" style={{ fontSize: `${Math.round(14 * scale)}px` }}>{m.year}</time>
-              <p className="hp-card-text" style={{ fontSize: `${(11.5 * scale).toFixed(1)}px` }}>{m.text}</p>
+              <time className="hp-card-year" style={{ fontSize: `${Math.round(18 * scale)}px` }}>{m.year}</time>
+              <p className="hp-card-text" style={{ fontSize: `${(12 * scale).toFixed(1)}px` }}>{m.text}</p>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function TimelineSection() {
     <>
       <style>{CSS}</style>
       <section className="hp">
-        <h2 className="hp-title">The Flashback to Hydropower Development Of Nepal</h2>
+        <h2 className="hp-title text-blue-900 ">The Flashback to Hydropower Development Of Nepal</h2>
         <DesktopCanvas />
         <div className="hp-mobile">
           {milestones.map((m, i) => (
@@ -176,7 +176,12 @@ export default function TimelineSection() {
           ))}
         </div>
         <div style={{ textAlign: 'center' }}>
-          <button className="hp-btn">KNOW MORE</button>
+          <a 
+              href="/about/chairman" 
+              className="mt-8 inline-block w-full sm:w-auto text-center px-8 lg:px-10 py-3 lg:py-4 bg-blue-600 text-white font-bold text-xs lg:text-sm rounded-sm shadow-lg shadow-blue-100 hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-300 tracking-wider"
+            >
+              Know More
+            </a>
         </div>
       </section>
     </>

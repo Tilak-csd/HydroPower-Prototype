@@ -12,11 +12,13 @@ import ScrollToTop from './components/ScrollToTop'
 import Projects from './pages/Project';
 import NotFound from './pages/NotFound';
 import ReportsPage from './pages/Reports';
+import PrototypeDisclaimer from './components/PrototypeDisclaimer'
 
 export default function App() {
   return (
     <BrowserRouter>
     <ScrollToTop />
+    <PrototypeDisclaimer />
       <Navbar />
 
       <Routes>

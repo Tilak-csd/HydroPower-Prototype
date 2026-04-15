@@ -27,7 +27,7 @@ const About = () => {
             </div>
 
             {/* Bottom Text Block (4 rows in diagram) */}
-            <div className="pt-8 border-t border-slate-100 space-y-6 text-justify text-slate-600 bg-slate-50/50 p-6 rounded-2xl">
+            <div className="pt-8 border-t border-slate-100 space-y-6 text-justify text-slate-600 bg-slate-50/50 px-2 rounded-2xl">
               <p>
                 NEA has a 41% stake, NTC has 6% and CIT & RBS each have 2% stake in the Company. Similarly, the general public and residents of Dolakha District will have a 15% and 10% share respectively. The remaining 24% share will be taken over by contributors in Employees Provident Fund (EPF), NEA & Companys staffs and staffs of financial institutions providing loans.
               </p>
@@ -39,19 +39,13 @@ const About = () => {
 
           {/* RIGHT side: The "Big Box" (Image) */}
           <div className="lg:col-span-4 sticky top-10">
-            <div className="relative p-6 bg-slate-100 rounded-[2.5rem] shadow-sm">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg">
+            <div className="relative bg-slate-100 rounded-[2.5rem] shadow-sm h-85">
                 <img 
                   src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=600" 
                   alt="Upper Tamakoshi Hydropower Dam" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-[1rem]"
                 />
               </div>
-              {/* Optional dynamic text bar matching the diagram's "IMAGE" box text */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1.5 bg-black/40 text-white rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
-                Project Image
-              </div>
-            </div>
           </div>
         </div>
 

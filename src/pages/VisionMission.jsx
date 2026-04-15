@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaEye, FaRocket, FaLeaf, FaHandsHelping } from 'react-icons/fa';
 import GlobalHeroSection from '../components/GlobalHeroSection';
+import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 const VisionMission = () => {
   const goals = [
@@ -30,13 +32,13 @@ const VisionMission = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           
           {/* LEFT: MISSION (Focus on Action) */}
-          <div className="group p-10 lg:p-16 bg-slate-900 rounded-[3rem] text-white flex flex-col justify-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20">
+          <div className="group p-10 lg:p-16 bg-slate-900 rounded-[1.5rem] text-white flex flex-col justify-start relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20">
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 transform group-hover:rotate-12 transition-transform">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 ">
                 <FaRocket size={30} />
               </div>
               <h2 className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4">Our Mission</h2>
-              <h3 className="text-3xl lg:text-4xl font-black mb-6 leading-tight">
+              <h3 className="text-2xl lg:text-3xl font-black mb-6 leading-tight">
                 Developing Renewable Energy to <span className="text-blue-500">Empower</span> Nepal.
               </h3>
               <p className="text-slate-400 text-lg leading-relaxed">
@@ -49,12 +51,12 @@ const VisionMission = () => {
 
           {/* RIGHT: VISION (Focus on Future) */}
           <div className="flex flex-col gap-8">
-            <div className="p-10 lg:p-12 bg-blue-50 rounded-[3rem] border border-blue-100 flex-1 flex flex-col justify-center">
+            <div className="p-10 lg:p-12 bg-blue-50 rounded-[1.5rem] border border-blue-100 flex-1 flex flex-col justify-center">
               <div className="w-14 h-14 bg-white text-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                 <FaEye size={28} />
               </div>
               <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Our Vision</h2>
-              <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-4">
+              <h3 className="text-1xl lg:text-2xl font-black text-slate-900 mb-4">
                 To be the leading catalyst in Nepal's journey toward energy independence.
               </h3>
               <p className="text-slate-600 leading-relaxed">
@@ -65,7 +67,7 @@ const VisionMission = () => {
             {/* Core Values / Specific Goals */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {goals.map((goal) => (
-                <div key={goal.id} className={`${goal.bg} p-8 rounded-[2.5rem] transition-transform hover:-translate-y-2 duration-300`}>
+                <div key={goal.id} className={`${goal.bg} p-8 rounded-[1rem] transition-transform hover:-translate-y-2 duration-300`}>
                   <div className="text-2xl mb-4">{goal.icon}</div>
                   <h4 className="font-bold text-slate-900 mb-2">{goal.title}</h4>
                   <p className="text-sm text-slate-600 leading-snug">{goal.desc}</p>
@@ -77,7 +79,7 @@ const VisionMission = () => {
         </div>
 
         {/* --- Strategic Pillars Section --- */}
-        <div className="mt-24 pt-16 border-t border-slate-100">
+        <div className="mt-24 pt-8 border-t border-slate-100">
           <div className="text-center mb-16">
             <h3 className="text-3xl font-black text-slate-900">Our Strategic Pillars</h3>
             <p className="text-slate-500 mt-2 italic">The foundations of our operational excellence</p>
@@ -97,6 +99,9 @@ const VisionMission = () => {
             ))}
           </div>
         </div>
+
+
+        <NavLink to='/'>Learn More</NavLink>
 
       </div>
     </section>

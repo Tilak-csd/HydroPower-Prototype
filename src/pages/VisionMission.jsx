@@ -1,110 +1,123 @@
 import React from 'react';
-import { FaEye, FaRocket, FaLeaf, FaHandsHelping } from 'react-icons/fa';
 import GlobalHeroSection from '../components/GlobalHeroSection';
-import {Link} from 'react-router-dom'
-import {NavLink} from 'react-router-dom'
 
 const VisionMission = () => {
-  const goals = [
+  const corporateGoals = [
     {
-      id: 1,
-      title: "Sustainable Power",
-      desc: "Harnessing natural water flow with zero-emission technology.",
-      icon: <FaLeaf className="text-green-500" />,
-      bg: "bg-green-50"
+      num: "01",
+      title: "Sustainable Generation",
+      description: "To prioritize run-of-the-river and storage hydro projects that balance national power demands with ecological integrity, preserving downstream river systems."
     },
     {
-      id: 2,
-      title: "Local Impact",
-      desc: "Investing in the communities surrounding our project sites.",
-      icon: <FaHandsHelping className="text-orange-500" />,
-      bg: "bg-orange-50"
+      num: "02",
+      title: "Domestic Self-Reliance",
+      description: "To minimize dependency on cross-border energy imports by accelerating development schedules and optimizing generation capacities entirely through regional engineering."
+    },
+    {
+      num: "03",
+      title: "Community Value Distribution",
+      description: "To structurally empower local inhabitants of project areas through direct equity investment opportunities, physical infrastructure, and rural electrification."
+    },
+    {
+      num: "04",
+      title: "Engineering Excellence",
+      description: "To implement advanced geological mapping and climate-resilient structural models to withstand localized environmental factors over multi-decade cycles."
     }
   ];
 
   return (
-    <section className="bg-white pb-24 font-sans text-slate-900">
-      <GlobalHeroSection title="Our Purpose" page="Vision & Mission" />
+    <main className="min-h-screen bg-white antialiased">
+      {/* Dynamic Main Header Context */}
+      <GlobalHeroSection title={"Vision & Mission"} page={"Vision & Mission"} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-16">
-        
-        {/* --- Main Content Grid --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          
-          {/* LEFT: MISSION (Focus on Action) */}
-          <div className="group p-10 lg:p-16 bg-slate-900 rounded-[1.5rem] text-white flex flex-col justify-start relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20">
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 ">
-                <FaRocket size={30} />
-              </div>
-              <h2 className="text-blue-400 font-bold uppercase tracking-widest text-sm mb-4">Our Mission</h2>
-              <h3 className="text-2xl lg:text-3xl font-black mb-6 leading-tight">
-                Developing Renewable Energy to <span className="text-blue-500">Empower</span> Nepal.
-              </h3>
-              <p className="text-slate-400 text-lg leading-relaxed">
-                Our mission is to identify, develop, and operate high-capacity hydropower projects through transparent engineering and domestic investment, ensuring energy security and sustainable industrial growth for the nation.
+      {/* ── SECTION 1: VISION (WIDESCREEN EDITORIAL STATEMENT) ── */}
+
+      <section className="bg-slate-50/60 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            
+            {/* Title Column */}
+            <div className="lg:col-span-4 lg:sticky lg:top-12">
+              <h2 className="text-xl font-extrabold text-slate-900 uppercase tracking-tight">
+                Our Vission
+              </h2>
+              <div className="w-12 h-[3.5px] bg-[#025a9e] mt-2" />
+            </div>
+
+            {/* Narrative Column */}
+            <div className="lg:col-span-8 space-y-8 text-slate-600 text-sm md:text-[15px] font-normal leading-relaxed text-justify">
+              <p>
+                 To be a driving force in the renewable energy sector by securing absolute energy self-reliance, utilizing sustainable water assets to power economic growth and regional prosperity.
               </p>
+             
             </div>
-            {/* Subtle background decoration */}
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
+
           </div>
-
-          {/* RIGHT: VISION (Focus on Future) */}
-          <div className="flex flex-col gap-8">
-            <div className="p-10 lg:p-12 bg-blue-50 rounded-[1.5rem] border border-blue-100 flex-1 flex flex-col justify-center">
-              <div className="w-14 h-14 bg-white text-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                <FaEye size={28} />
-              </div>
-              <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Our Vision</h2>
-              <h3 className="text-1xl lg:text-2xl font-black text-slate-900 mb-4">
-                To be the leading catalyst in Nepal's journey toward energy independence.
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                We envision a future where every household and industry is powered by clean, reliable, and affordable hydropower, positioning Nepal as a green-energy hub in South Asia.
-              </p>
-            </div>
-
-            {/* Core Values / Specific Goals */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {goals.map((goal) => (
-                <div key={goal.id} className={`${goal.bg} p-8 rounded-[1rem] transition-transform hover:-translate-y-2 duration-300`}>
-                  <div className="text-2xl mb-4">{goal.icon}</div>
-                  <h4 className="font-bold text-slate-900 mb-2">{goal.title}</h4>
-                  <p className="text-sm text-slate-600 leading-snug">{goal.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
         </div>
+      </section>
 
-        {/* --- Strategic Pillars Section --- */}
-        <div className="mt-24 pt-8 border-t border-slate-100">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-black text-slate-900">Our Strategic Pillars</h3>
-            <p className="text-slate-500 mt-2 italic">The foundations of our operational excellence</p>
+      {/* -- SECTION 2  */}
+      <section className="bg-slate-50/60 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            
+            {/* Title Column */}
+            <div className="lg:col-span-4 lg:sticky lg:top-12">
+              <h2 className="text-xl font-extrabold text-slate-900 uppercase tracking-tight">
+                Our Mission
+              </h2>
+              <div className="w-12 h-[3.5px] bg-[#025a9e] mt-2" />
+            </div>
+
+            {/* Narrative Column */}
+            <div className="lg:col-span-8 space-y-8 text-slate-600 text-sm md:text-[15px] font-normal leading-relaxed text-justify">
+              <p>
+                Our mission is to plan, optimize, and safely operate clean hydropower infrastructures through robust engineering protocols and strict environmental compliance frameworks. By combining institutional transparency with proactive local coordination, we develop energy platforms that deliver predictable value.
+              </p>
+              <p>
+                We recognize that building true long-term utility requires deep respect for our surrounding topography. We dedicate ourselves to standardizing sustainable operational systems that actively mitigate ecological footprints while maximizing macroeconomic output for our community stakeholders.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: CORPORATE GOALS (TYPOGRAPHIC INDEX) ── */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          {/* Section Indicator */}
+          <div className="mb-12 text-left">
+            <h2 className="text-xl font-extrabold text-slate-900 uppercase tracking-tight">
+              Corporate Goals
+            </h2>
+            <div className="w-12 h-[3.5px] bg-[#025a9e] mt-2" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              { title: "Transparency", text: "Maintaining the highest standards of corporate governance for our shareholders." },
-              { title: "Innovation", text: "Applying modern civil engineering to maximize water-to-energy conversion." },
-              { title: "Resilience", text: "Building robust infrastructure designed to last for generations." }
-            ].map((pillar, i) => (
-              <div key={i} className="text-center px-4">
-                <div className="text-blue-600 font-black text-5xl opacity-10 mb-[-25px]">0{i+1}</div>
-                <h4 className="text-xl font-bold text-slate-900 mb-3 relative z-10">{pillar.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{pillar.text}</p>
+          {/* Core Goals List */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 lg:gap-y-16">
+            {corporateGoals.map((goal, idx) => (
+              <div key={idx} className="flex gap-6 items-start group">
+                {/* Large minimalist numeric layout counter */}
+                <span className="text-3xl font-extrabold text-slate-200 group-hover:text-[#025a9e] transition-colors duration-300 select-none leading-none pt-0.5">
+                  {goal.num}
+                </span>
+                <div className="space-y-2">
+                  <h3 className="font-bold text-slate-900 text-base md:text-lg tracking-tight">
+                    {goal.title}
+                  </h3>
+                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed text-justify">
+                    {goal.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
+
         </div>
-
-
-        <NavLink to='/'>Learn More</NavLink>
-
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 

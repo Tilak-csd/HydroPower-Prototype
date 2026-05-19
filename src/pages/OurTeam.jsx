@@ -99,7 +99,7 @@ const OurTeam = () => {
         </div>
       </div>
     </section>
-  );
+  ); 
 };
 
 export default OurTeam;

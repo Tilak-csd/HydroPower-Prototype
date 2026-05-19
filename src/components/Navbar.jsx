@@ -14,9 +14,9 @@ const navLinks = [
     ]
   },
   { name: 'Projects & Activities', path: '/projects-activities' },
-  { name: 'Releases', path: '/releases', dropdown: [{ name: 'Press Releases', path: '/releases/press-releases' }, {name:"Gallery", path:'/gallery'}] },
+  { name: 'Gallery', path: '/gallery' },
   { name: 'Downloads', path: '/downloads', dropdown: [{ name: 'Reports', path: '/downloads/reports' }] },
-  { name: 'Reports', path: '/reports' },
+  { name: 'News', path: '/news' },
   { name: 'Contact Us', path: '/contact-us' },
 ];
 

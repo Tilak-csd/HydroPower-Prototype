@@ -1,102 +1,113 @@
 import React from 'react';
-import { FaLinkedinIn, FaEnvelope, FaTwitter, FaGlobe } from 'react-icons/fa';
 import GlobalHeroSection from '../components/GlobalHeroSection';
 
 const OurTeam = () => {
-  // Data Array - Easy to update
+  // 10 Member Demo Roster with realistic Hydropower operational roles
   const teamMembers = [
     {
       id: 1,
       name: "Engr. Rajesh Thapa",
       role: "Chief Executive Officer",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=500",
-      linkedin: "https://linkedin.com",
-      email: "mailto:ceo@hydropower.com",
-      twitter: "#"
     },
     {
       id: 2,
       name: "Sita Gurung",
       role: "Lead Environmental Engineer",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500",
-      linkedin: "https://linkedin.com",
-      email: "mailto:sita@hydropower.com",
-      twitter: "#"
     },
     {
       id: 3,
       name: "Binod Sharma",
-      role: "Project Manager",
+      role: "Project Director",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=500",
-      linkedin: "https://linkedin.com",
-      email: "mailto:binod@hydropower.com",
-      twitter: "#"
     },
     {
       id: 4,
       name: "Anjali Shrestha",
-      role: "Civil Engineer",
+      role: "Senior Civil Engineer",
       image: "https://images.unsplash.com/photo-1580894732230-28e193399e8c?auto=format&fit=crop&q=80&w=500",
-      linkedin: "https://linkedin.com",
-      email: "mailto:anjali@hydropower.com",
-      twitter: "#"
+    },
+    {
+      id: 5,
+      name: "Er. Deepak Raj Joshi",
+      role: "Chief Hydrogeologist",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500",
+    },
+    {
+      id: 6,
+      name: "Sunita Mahat",
+      role: "Chief Financial Officer",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500",
+    },
+    {
+      id: 7,
+      name: "Er. Kshitiz Bhandari",
+      role: "Electro-Mechanical Head",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500",
+    },
+    {
+      id: 8,
+      name: "Pooja Karki",
+      role: "Legal & Compliance Director",
+      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=500",
+    },
+    {
+      id: 9,
+      name: "Rameshwor Neupane",
+      role: "Community Relations Manager",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=500",
+    },
+    {
+      id: 10,
+      name: "Er. Niranjan Adhikari",
+      role: "Quality Assurance Engineer",
+      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=500",
     }
   ];
 
   return (
-    <section className="bg-slate-50 pb-20 font-sans">
+    <section className="bg-white pb-24">
       <GlobalHeroSection title="Our Team" page="About / Team" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-16">
-        {/* Intro Text */}
-        <div className="mb-16 text-center lg:text-left">
-          <h2 className="text-blue-600 font-bold tracking-tighter uppercase text-sm mb-2">Leadership & Expertise</h2>
-          <h3 className="text-4xl font-black text-slate-900">Meet the Professionals</h3>
-          <div className="w-20 h-1.5 bg-blue-600 mt-4 rounded-full mx-auto lg:mx-0"></div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16">
+        
+        {/* Title Header Section with Modern Accent Bar */}
+        <div className="mb-14 text-left">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight uppercase">
+            Meet Our Team
+          </h2>
+          <div className="w-16 h-[3.5px] bg-[#025a9e] mt-2" />
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Clean, Sharp Professional Team Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
           {teamMembers.map((member) => (
-            <div key={member.id} className="group relative bg-white p-4 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-500">
+            <div key={member.id} className="flex flex-col group">
               
-              {/* Image Container */}
-              <div className="relative overflow-hidden rounded-[1.5rem] aspect-[4/5] mb-6">
+              {/* Sharp Image Container - No Radius, Borderless */}
+              <div className="overflow-hidden aspect-[4/5] bg-slate-100 mb-4">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
                 />
-                
-                {/* Social Sidebar - Slides in from right on hover */}
-                <div className="absolute top-4 right-[-50px] group-hover:right-4 transition-all duration-500 flex flex-col gap-2">
-                  <a href={member.linkedin} target="_blank" rel="noreferrer" 
-                     className="w-10 h-10 bg-white text-blue-600 rounded-xl flex items-center justify-center shadow-lg hover:bg-blue-600 hover:text-white transition-colors">
-                    <FaLinkedinIn size={18} />
-                  </a>
-                  <a href={member.email}
-                     className="w-10 h-10 bg-white text-blue-600 rounded-xl flex items-center justify-center shadow-lg hover:bg-blue-600 hover:text-white transition-colors">
-                    <FaEnvelope size={18} />
-                  </a>
-                  <a href={member.twitter}
-                     className="w-10 h-10 bg-white text-blue-600 rounded-xl flex items-center justify-center shadow-lg hover:bg-blue-600 hover:text-white transition-colors">
-                    <FaTwitter size={18} />
-                  </a>
-                </div>
               </div>
 
-              {/* Text Info */}
-              <div className="px-2 pb-2">
-                <h4 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h4>
-                <p className="text-blue-600 text-sm font-semibold mb-3 tracking-wide uppercase">{member.role}</p>
-                
-                <button className="flex items-center gap-2 text-slate-400 text-xs font-bold hover:text-slate-900 transition-colors uppercase tracking-widest">
-                  View Profile <FaGlobe />
-                </button>
+              {/* Identity Detail Area */}
+              <div className="text-left">
+                <h3 className="text-base font-bold text-slate-900 tracking-tight leading-snug">
+                  {member.name}
+                </h3>
+                <p className="text-xs font-semibold text-[#025a9e] mt-1 tracking-wide uppercase">
+                  {member.role}
+                </p>
               </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   ); 

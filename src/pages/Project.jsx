@@ -89,11 +89,11 @@ const Projects = () => {
                     <img 
                       src={filteredProjects[0].img} 
                       alt="Featured" 
-                      className="w-full h-64 sm:h-80 lg:h-[450px] object-cover group-hover:scale-105 transition-transform duration-500" 
+                      className="w-full h-64 sm:h-80 lg:h-[350px] object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
                   <span className="text-blue-600 text-xs lg:text-sm font-bold uppercase tracking-widest">{filteredProjects[0].date}</span>
-                  <h1 className="text-2xl lg:text-4xl font-extrabold mt-3 mb-4 text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
+                  <h1 className="text-xl lg:text-2xl font-extrabold mt-3 mb-4 text-slate-900  leading-tight">
                     {filteredProjects[0].title}
                   </h1>
                   <p className="text-gray-600 text-sm lg:text-lg mb-6 leading-relaxed max-w-3xl">

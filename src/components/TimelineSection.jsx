@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 
 const SVG_W = 1178;
 const SVG_H = 840;
-const CARD_W_SVG = 185;
-const GAP_SVG = 22;
-const CARD_H_ESTIMATE = 115; // Estimated height for 'top' side calculations
+const CARD_W_SVG = 230; 
+const GAP_SVG = 26;
 
 const PATH_D =
   "M0 126.613C167.5 257 603.5 235.5 725.5 139.5C847.5 43.5 909 -52.6065 1086.5 36.5C1211 99 1182.5 238 1140.5 312.5C1067.91 441.263 956.5 470.696 777 449.5C568.685 424.901 282 452 175.5 516.5C47 594.324 101.61 739.185 175.5 784.5C303.5 863 466 837 540 819.5";
@@ -22,7 +21,6 @@ const milestones = [
   { year: "2024", icon: "🔋", text: "Nepal's Electricity Generation Capacity crosses to 3,000 MW. Regular Export started.", side: "top", align: "left" },
 ];
 
-// ── Math Helpers ─────────────────────────────────────────────────────────────
 function cubicPoint(p0, p1, p2, p3, t) {
   const u = 1 - t;
   const tt = t * t;
@@ -56,43 +54,6 @@ function pointAtGlobalT(segs, t) {
   return cubicPoint(segs[idx].p0, segs[idx].p1, segs[idx].p2, segs[idx].p3, s - idx);
 }
 
-// ── Refined Styles ────────────────────────────────────────────────────────────
-const CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap');
-
-  .hp { font-family: 'DM Sans', sans-serif; background: #fff; color: #1a2a4a; padding: 72px 20px; max-width: 1200px; margin: 0 auto; }
-  .hp-title { font-size: clamp(22px, 3vw, 38px); font-weight: 800; max-width: 600px; margin-bottom: 52px; }
-  .hp-canvas { position: relative; width: 100%; }
-  .hp-svg-bg { width: 100%; display: block; overflow: visible; }
-  
-  .hp-dot { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #2a6dd9; border: 2.5px solid #fff; box-shadow: 0 0 0 2.5px #2a6dd9; transform: translate(-50%, -50%); z-index: 4; }
-  .hp-line { position: absolute; width: 1px; z-index: 2; transform: translateX(-50%); background: repeating-linear-gradient(to bottom, #4472C4 0px, #4472C4 4px, transparent 4px, transparent 9px); }
-  
-  .hp-card { position: absolute; z-index: 3; animation: hpFade .5s ease both; will-change: transform, opacity; }
-  @keyframes hpFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-  .hp-card-inner { display: flex; flex-direction: column; }
-  .hp-card.align-right .hp-card-inner { align-items: flex-end; text-align: right; }
-  .hp-card.align-center .hp-card-inner { align-items: center; text-align: center; }
-  .hp-card.align-left .hp-card-inner { align-items: flex-start; text-align: left; }
-
-  .hp-card-icon { font-size: 20px; margin-bottom: 5px; }
-  .hp-card-year { font-size: 24px; font-weight: 700; color: #0a1628; margin-bottom: 4px; }
-  .hp-card-text { line-height: 1.6; color: #5a6a8a; font-weight: 300; }
-
-  .hp-btn { padding: 11px 38px; border: 1.5px solid #2563eb; color: #2563eb; font-size: 13px; font-weight: 600; background: transparent; cursor: pointer; transition: 0.2s; margin-top: 48px; }
-  .hp-btn:hover { background: #2563eb; color: #fff; }
-
-  .hp-mobile { display: none; }
-  .hp-mobile-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid #e0e8f5; animation: hpFade .4s ease both; }
-  .hp-mobile-box { flex-shrink: 0; width: 42px; height: 42px; background: #eef3fb; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 19px; }
-
-  @media (max-width: 860px) {
-    .hp-canvas, .desktop-only { display: none; }
-    .hp-mobile { display: block; }
-  }
-`;
-
 function DesktopCanvas() {
   const wrapRef = useRef(null);
   const [canvasW, setCanvasW] = useState(SVG_W);
@@ -120,7 +81,7 @@ function DesktopCanvas() {
       let cardTop, lineTop;
 
       if (m.side === "top") {
-        cardTop = dotPx.y - gapPx - (CARD_H_ESTIMATE * scale);
+        cardTop = dotPx.y - gapPx; 
         lineTop = dotPx.y - gapPx;
       } else {
         cardTop = dotPx.y + gapPx;
@@ -132,58 +93,105 @@ function DesktopCanvas() {
   }, [scale, segs]);
 
   return (
-    <div ref={wrapRef} className="hp-canvas">
-      <svg className="hp-svg-bg" viewBox={`0 0 ${SVG_W} ${SVG_H}`} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-        <path d={PATH_D} stroke="#4472C4" strokeWidth="2" strokeDasharray="20 12" fill="none" />
+    <div ref={wrapRef} className="relative w-full hidden md:block select-none">
+      <svg className="w-full h-auto block overflow-visible" viewBox={`0 0 ${SVG_W} ${SVG_H}`} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <path d={PATH_D} stroke="#dbeafe" strokeWidth="6" strokeLinecap="round" fill="none" className="opacity-60" />
+        <path d={PATH_D} stroke="#2563eb" strokeWidth="2.5" strokeDasharray="12 8" strokeLinecap="round" fill="none" />
       </svg>
 
-      {renderedMilestones.map((m) => (
-        <div key={m.index}>
-          <span className="hp-dot" style={{ left: m.dotPx.x, top: m.dotPx.y }} />
-          <span className="hp-line" style={{ left: m.dotPx.x, top: m.lineTop, height: m.lineH }} />
-          <div 
-            className={`hp-card align-${m.align}`} 
-            style={{ left: m.cardLeft, top: m.cardTop, width: m.cardWpx, animationDelay: `${m.index * 0.07}s` }}
-          >
-            <div className="hp-card-inner">
-              <span className="hp-card-icon" role="img" aria-label="icon">{m.icon}</span>
-              <time className="hp-card-year" style={{ fontSize: `${Math.round(18 * scale)}px` }}>{m.year}</time>
-              <p className="hp-card-text" style={{ fontSize: `${(12 * scale).toFixed(1)}px` }}>{m.text}</p>
+      {renderedMilestones.map((m) => {
+        const alignmentClass = 
+          m.align === "right" ? "items-end text-right" : 
+          m.align === "center" ? "items-center text-center" : 
+          "items-start text-left";
+
+        const sideTransform = m.side === "top" ? "-translate-y-full" : "";
+
+        return (
+          <div key={m.index} className="absolute inset-0 pointer-events-none">
+            <span 
+              className="absolute w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-md shadow-blue-200 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-auto" 
+              style={{ left: m.dotPx.x, top: m.dotPx.y }} 
+            />
+            <span 
+              className="absolute w-[1.5px] -translate-x-1/2 z-10 bg-gradient-to-b from-blue-500 to-blue-200" 
+              style={{ left: m.dotPx.x, top: m.lineTop, height: m.lineH }} 
+            />
+            
+            {/* Added style delay and custom animate-fade-in layout class */}
+            <div 
+              className={`absolute z-10 pointer-events-auto group ${sideTransform} opacity-0 animate-fade-in`}
+              style={{ 
+                left: m.cardLeft, 
+                top: m.cardTop, 
+                width: m.cardWpx,
+                animationDelay: `${m.index * 0.08}s`
+              }}
+            >
+              <div className={`flex flex-col p-4 rounded-xl border border-slate-100 bg-white/90 backdrop-blur-md shadow-sm group-hover:shadow-md group-hover:border-blue-200 group-hover:-translate-y-0.5 transition-all duration-300 ${alignmentClass}`}>
+                <span className="text-xl mb-1 filter drop-shadow-sm">{m.icon}</span>
+                <time className="block font-bold text-slate-900 tracking-tight leading-none mb-1.5" style={{ fontSize: `${Math.max(14, Math.round(19 * scale))}px` }}>
+                  {m.year}
+                </time>
+                <p className="text-slate-500 font-normal leading-relaxed break-words" style={{ fontSize: `${Math.max(11, Math.round(12.5 * scale))}px` }}>
+                  {m.text}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
 
 export default function TimelineSection() {
   return (
-    <>
-      <style>{CSS}</style>
-      <section className="hp">
-        <h2 className="hp-title text-blue-900 ">The Flashback to Hydropower Development Of Nepal</h2>
-        <DesktopCanvas />
-        <div className="hp-mobile">
-          {milestones.map((m, i) => (
-            <div key={i} className="hp-mobile-item" style={{ animationDelay: `${i * 0.06}s` }}>
-              <div className="hp-mobile-box">{m.icon}</div>
-              <div>
-                <time className="hp-mobile-year">{m.year}</time>
-                <p className="hp-mobile-text">{m.text}</p>
-              </div>
+    <section className="bg-slate-50/50 py-16 px-6 md:py-24 lg:px-12 max-w-[1400px] mx-auto rounded-3xl my-6">
+      
+      {/* Header Context */}
+      <div className="max-w-3xl text-left mb-16 lg:mb-24">
+        <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-3 py-1.5 rounded-full">
+          Historical Roadmap
+        </span>
+        <h2 className="mt-4 text-3xl md:text-4xl lg:text-4xl lg:w-150 font-black text-slate-900 tracking-tight leading-tight">
+          The Flashback to Hydropower Development Of Nepal
+        </h2>
+        <div className="w-12 h-1 bg-blue-600 mt-6 rounded-full" />
+      </div>
+
+      {/* Desktop Map Element */}
+      <DesktopCanvas />
+
+      {/* Mobile Stream Stack fallback */}
+      <div className="block md:hidden space-y-6 max-w-md mx-auto">
+        {milestones.map((m, i) => (
+          /* Added standard v4 runtime transition properties safely here */
+          <div 
+            key={i} 
+            className="flex gap-4 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm opacity-0 animate-fade-in"
+            style={{ animationDelay: `${i * 0.06}s` }}
+          >
+            <div className="flex-shrink-0 w-11 h-11 bg-blue-50 border border-blue-100 rounded-xl flex items-center justify-center text-xl">
+              {m.icon}
             </div>
-          ))}
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <a 
-              href="/about/chairman" 
-              className="mt-8 inline-block w-full sm:w-auto text-center px-8 lg:px-10 py-3 lg:py-4 bg-blue-600 text-white font-bold text-xs lg:text-sm rounded-sm shadow-lg shadow-blue-100 hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-300 tracking-wider"
-            >
-              Know More
-            </a>
-        </div>
-      </section>
-    </>
+            <div>
+              <time className="block font-bold text-lg text-slate-900 mb-0.5">{m.year}</time>
+              <p className="text-sm text-slate-600 leading-relaxed">{m.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Actions Trigger */}
+      <div className="text-center mt-12 lg:mt-20">
+        <a 
+          href="/about/chairman" 
+          className="inline-block w-full sm:w-auto text-center px-10 py-4 bg-blue-600 text-white font-bold text-xs rounded-lg shadow-lg shadow-blue-600/10 hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-300 tracking-wider uppercase"
+        >
+          Know More About Our Legacy
+        </a>
+      </div>
+    </section>
   );
 }

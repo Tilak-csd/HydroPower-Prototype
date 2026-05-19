@@ -44,7 +44,7 @@ const Footer = () => {
               <img src="./hydropower-favicon.png" alt="Hydropower Energy" className="h-20 w-auto" />
             </div>
             <p className="text-slate-400 leading-relaxed text-sm">
-              Rawa Energy Development Ltd. is committed to sustainable energy development, 
+              Demo Energy Development Ltd. is committed to sustainable energy development, 
               utilizing Nepal's water resources to provide affordable and eco-friendly power.
             </p>
             <div className="flex gap-3">
@@ -75,10 +75,10 @@ const Footer = () => {
               Quick Projects
             </h4>
             <ul className="space-y-4">
-              <li><a href="#" className="footer-link text-sm">Rairang Khola Project</a></li>
-              <li><a href="#" className="footer-link text-sm">Ridi Khola Project</a></li>
-              <li><a href="#" className="footer-link text-sm">Upper Tamakoshi</a></li>
-              <li><a href="#" className="footer-link text-sm">Future Pipelines</a></li>
+              <li><a href="#" className="footer-link text-sm">Demo Khola Project</a></li>
+              <li><a href="#" className="footer-link text-sm">Demo Khola Project</a></li>
+              <li><a href="#" className="footer-link text-sm">Demo Khola Project</a></li>
+              <li><a href="#" className="footer-link text-sm">Demo Khola Project</a></li>
             </ul>
           </div>
 
@@ -98,7 +98,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-slate-400 text-sm">
                 <FaEnvelope className="text-blue-500" />
-                <span>info@rawaenergy.com.np</span>
+                <span>info@demosite.com.np</span>
               </div>
             </div>
           </div>
@@ -106,12 +106,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-[11px] uppercase tracking-wider">
-          <p>© {currentYear} Rawa Energy Development Ltd. All Rights Reserved. Powered by <a href="https://www.unifiedsolutions.com.np" target="_blank">Unified Solutions</a></p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-          </div>
+        <div className="pt-8 border-t border-slate-800/60 flex flex-col md:flex-row justify-center items-center gap-4 text-slate-500 text-[11px] uppercase tracking-wider">
+          <p>© {currentYear} Demo Energy Development Ltd. All Rights Reserved. Powered by <a href="https://www.unifiedsolutions.com.np" target="_blank">Unified Solutions</a></p>
+          
         </div>
       </div>
     </footer>

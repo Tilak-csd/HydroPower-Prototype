@@ -55,7 +55,7 @@ const AboutSection = () => {
       }
       
       .stat-card {
-        padding: 15px 5px; 
+        padding: 10px 5px; 
         flex: 1;
         text-align: center;
       }
@@ -69,9 +69,9 @@ const AboutSection = () => {
       }
 
       /* Spacing adjustment for reversed elements */
-      .right-image-wrapper {
-        margin-bottom: 25px;
-      }
+      // .right-image-wrapper {
+      //   margin-bottom: 25px;
+      // }
       .values-flex {
         margin-top: 25px;
         gap: 15px;
@@ -94,7 +94,7 @@ const AboutSection = () => {
               Empowering the Future with Clean Hydropower Solutions
             </h2>
             <p style={{ color: '#64748b', marginBottom: '40px', lineHeight: '1.6' }}>
-              Rawa Energy Development Ltd. is committed to sustainable energy development, 
+              Demo Energy Development Ltd. is committed to sustainable energy development, 
               utilizing Nepal's water resources to provide affordable and eco-friendly power.
             </p>
 
@@ -138,11 +138,11 @@ const AboutSection = () => {
               <div className="text-content-wrapper">
                 <div className="values-flex" style={{ display: 'flex', gap: '20px', marginBottom: '30px' }}>
                   <div>
-                    <h5 style={{ fontWeight: '700', marginBottom: '5px', fontSize: '15px' }}>Our Vision</h5>
+                    <h5 style={{ fontWeight: '700', marginBottom: '5px', fontSize: '24px' }}>Our Vision</h5>
                     <p style={{ fontSize: '13px', color: '#64748b' }}>To be a leader in sustainable energy production.</p>
                   </div>
                   <div>
-                    <h5 style={{ fontWeight: '700', marginBottom: '5px', fontSize: '15px' }}>Our Mission</h5>
+                    <h5 style={{ fontWeight: '700', marginBottom: '5px', fontSize: '24px' }}>Our Mission</h5>
                     <p style={{ fontSize: '13px', color: '#64748b' }}>Delivering innovative power through responsible engineering.</p>
                   </div>
                 </div>

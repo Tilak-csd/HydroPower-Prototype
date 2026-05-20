@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, Users, Award, MoveRight } from 'lucide-react';
+import { NavLink } from 'react-router-dom'
 
 const AboutSection = () => {
   const inlineStyles = `
@@ -147,14 +148,14 @@ const AboutSection = () => {
                   </div>
                 </div>
 
-                <button style={{ 
+                <NavLink to="/projects-activities" style={{ 
                   backgroundColor: '#2563eb', color: '#fff', padding: '10px 20px', 
                   borderRadius: '4px', border: 'none', fontWeight: '600',
                   display: 'flex', alignItems: 'center', gap: '8px',
-                  cursor: 'pointer', marginBottom: '30px', fontSize: '14px'
+                  cursor: 'pointer', marginBottom: '30px', fontSize: '14px', width: '13rem'
                 }}>
                   VIEW PROJECTS <MoveRight size={18} />
-                </button>
+                </NavLink>
               </div>
 
               {/* This part goes TOP on mobile */}

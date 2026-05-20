@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -145,7 +145,7 @@ function Hero() {
                 </p>
 
                 <div className="animate-content" style={{ display: 'flex', gap: '1rem', opacity: 0 }}>
-                  <Link to="/projects" className="hover-btn-primary" style={{
+                  <NavLink to="/projects-activities" className="hover-btn-primary" style={{
                     padding: '12px 28px',
                     backgroundColor: '#2563eb',
                     color: '#fff',
@@ -156,9 +156,9 @@ function Hero() {
                     transition: '0.3s'
                   }}>
                     READ MORE
-                  </Link>
+                  </NavLink>
                   
-                  <Link to="/contact" className="hover-btn-secondary" style={{
+                  <NavLink to="/contact-us" className="hover-btn-secondary" style={{
                     padding: '12px 28px',
                     border: '1px solid rgba(255,255,255,0.4)',
                     color: '#fff',
@@ -169,7 +169,7 @@ function Hero() {
                     transition: '0.3s'
                   }}>
                     CONTACT US
-                  </Link>
+                  </NavLink>
                 </div>
               </div>
             </div>

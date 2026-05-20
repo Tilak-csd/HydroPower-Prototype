@@ -18,7 +18,7 @@ const newsArticles = [
     date: 'March 02, 2026',
     type: 'NEWS',
     summary: 'Successful completion of the road maintenance project in the project-affected area as part of our CSR initiatives.',
-    link: '#',
+    link: 'AGM_Notice_2026_Nepali.pdf',
     isDownload: false
   },
   {
@@ -27,7 +27,7 @@ const newsArticles = [
     date: 'February 18, 2026',
     type: 'NEWS',
     summary: 'Sealed proposals are invited from eligible international contractors for the supply, installation, and commissioning of turbine units.',
-    link: '#',
+    link: 'AGM_Notice_2026_Nepali.pdf',
     isDownload: false
   }
 ];

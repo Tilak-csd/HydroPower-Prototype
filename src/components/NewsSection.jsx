@@ -9,7 +9,7 @@ const NewsSection = () => {
       title: "Annual General Meeting 2026 Notice",
       date: "April 10, 2026",
       summary: "Notice is hereby given to all shareholders regarding the upcoming 12th Annual General Meeting to be held at the central office.",
-      link: "#"
+      link: "AGM_Notice_2026_Nepali.pdf"
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const NewsSection = () => {
       title: "Second Quarter Progress Report - FY 2082/83",
       date: "March 25, 2026",
       summary: "Detailed progress report of the construction phase, including turbine installation and transmission line updates.",
-      link: "#",
+      link: "AGM_Notice_2026_Nepali.pdf",
       isDownload: true
     },
     {
@@ -26,7 +26,7 @@ const NewsSection = () => {
       title: "Local Community Development Fund Distribution",
       date: "March 02, 2026",
       summary: "Successful completion of the road maintenance project in the project-affected area as part of our CSR initiatives.",
-      link: "#"
+      link: "AGM_Notice_2026_Nepali.pdf"
     }
   ];
 

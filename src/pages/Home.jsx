@@ -5,14 +5,14 @@ import MessageSection from '../components/MessageSection'
 import TimelineSection from '../components/TimelineSection'
 import ProjectSection from '../components/ProjectSection'
 import NewsAndReports from '../components/NewsSection'
-import CoreServices from '../components/CoreService'
+import SalientFeatures from '../components/SalientFeatures'
 
 export default function Home() {
   return (
     <main>
         <Hero />
         <AboutSection />
-        <CoreServices />
+        <SalientFeatures />
         <MessageSection />
         <TimelineSection />
         <ProjectSection />
